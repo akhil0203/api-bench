@@ -34,7 +34,7 @@ const nameRegExp2=/\s*/gu;
 const defaultRegExp1=/^.+=/u;
 const defaultRegExp2=/^\s*|\s*$/gu;
 const typeRegExp1=/^.*\/\*|\*\/.+$/gu;
-const typeRegExp2=/\s*/gu
+const typeRegExp2=/\s*/gu;
 const buildParameter = (parameter: string,): Param => {
   const value: Param = {
     name: '',
@@ -43,7 +43,7 @@ const buildParameter = (parameter: string,): Param => {
     value: '',
     envName: '',
   };
-  if (buildRegExp1.exec(parameter)) {
+  if (buildRegExp1.exec(parameter,)) {
     value.name = parameter
       .replace(nameRegExp1, '',)
       .replace(nameRegExp2, '',);
@@ -56,7 +56,7 @@ const buildParameter = (parameter: string,): Param => {
       .toLowerCase();
     return value;
   }
-  if (buildRegExp2.exec(parameter)) {
+  if (buildRegExp2.exec(parameter,)) {
     value.name = parameter
       .replace(nameRegExp1, '',)
       .replace(nameRegExp2, '',);
@@ -72,7 +72,7 @@ const buildParameter = (parameter: string,): Param => {
     }
     return value;
   }
-  if (buildRegExp3.exec(parameter)) {
+  if (buildRegExp3.exec(parameter,)) {
     value.name = parameter
       .replace(nameRegExp1, '',)
       .replace(nameRegExp2, '',);
@@ -124,7 +124,7 @@ const analyzeRegExp=/\s*function\s*/u;
 export const analyze = (func: Function,): Param[] => {
   const parameters: string[] = ((): string[] => {
     const fun: string = func.toString().replace(/[\r\n]/gu, ' ',);
-    if (analyzeRegExp.exec(fun)) {
+    if (analyzeRegExp.exec(fun,)) {
       return fun
         .replace(/^function\s*\(|\)\s*\{.*\}\s*$/gu, '',)
         .split(',',);
