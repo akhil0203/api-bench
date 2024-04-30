@@ -68,7 +68,7 @@ home:
     title: "Home"
     description: "Welcome to the documentation for the framework @idrinth/api-bench"
   title: "What does this project do?"
-  what: "This project provides a framework for testing rest-APIs and websites for  changes in response times."
+  what: "This project provides an API performance measuring and monitoring framework, that strives to provide the best developer experience possible while keeping it easy to expand and configure."
   why: "This helps to detect performance changes in code in a quick and simple manner."
   demo:
     youtube: "Version 2.7.4 Demo"
@@ -500,6 +500,9 @@ cookie-consent:
     youtube:
       title: "YouTube"
       description: "We will load videos from www.youtube-nocookie.com to directly play on the site."
+    airtime:
+      title: "Airtime"
+      description: "Participate in a short user survey via airtimeux.com with the response data stored by them."
 
 language-switch:
   aria: "Language switch"
